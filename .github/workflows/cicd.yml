@@ -54,7 +54,7 @@ jobs:
           # 빈칸 6: 업로드할 파일 경로
           path: ./cicd-basic-lab/target/app.jar
           retention-days: 1
-
+          
   cd:
     # 빈칸 7: ci Job 완료 후 실행되도록 의존성 선언
     needs: ci
