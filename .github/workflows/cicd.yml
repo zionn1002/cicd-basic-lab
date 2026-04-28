@@ -16,6 +16,9 @@ concurrency:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./cicd-basic-lab
 
     # 빈칸 3: cd Job에서 참조할 Artifact 이름을 outputs로 노출
     outputs:
@@ -49,5 +52,5 @@ jobs:
         with:
           name: ${{ steps.set-name.outputs.value }}
           # 빈칸 6: 업로드할 파일 경로
-          path: ./target/app.jar
+          path: ./cicd-basic-lab/target/app.jar
           retention-days: 1
