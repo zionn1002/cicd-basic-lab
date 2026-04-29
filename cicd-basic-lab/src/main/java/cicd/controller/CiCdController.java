@@ -12,6 +12,6 @@ public class CiCdController {
 
 	@GetMapping("/ci-cd")
 	public Map<String, String> getCiCd() {
-	    return Map.of("app", "ci-cd", "version", "v3");
+	    return Map.of("app", "ci-cd", "version", "v4");
 	}
 }
