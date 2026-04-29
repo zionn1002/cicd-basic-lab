@@ -68,7 +68,7 @@ jobs:
             ${{ steps.tag.outputs.value }}
             ${{ vars.DOCKERHUB_USERNAME }}/cicd-basic-lab:latest
           # 빈칸 7: GitHub Actions 캐시를 Docker 레이어 캐시로 활용
-          cache-from: type=type=gha
+          cache-from: type=gha
           cache-to: type=gha,mode=max
 
   cd:
