@@ -1,3 +1,4 @@
+```
 # .github/workflows/cicd.yml
 # 
 # 단계별 발전 이력:
@@ -50,7 +51,7 @@ jobs:
 
       # 3. Maven 빌드
       - name: Build with Maven
-        run: mvn clean package -DskipTest -B
+        run: mvn clean package -DskipTests -B
 
       # 4. OIDC 인증
       #    변경점: DOCKERHUB_TOKEN 불필요 → AWS OIDC Role만 사용
@@ -65,7 +66,7 @@ jobs:
       #    변경점: docker/login-action (Docker Hub) → amazon-ecr-login (ECR)
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/mazon-ecr-login@v2
+        uses: aws-actions/amazon-ecr-login@v2
 
       # 6. Docker 빌드 + ECR Push
       #    CICD2: {dockerhub_user}/cicd-basic-lab:{run_number}-{sha7}
@@ -92,4 +93,4 @@ jobs:
           # Job 2 (cd) 로 이미지 URI 전달
           echo "image-uri=${IMAGE_URI}" >> $GITHUB_OUTPUT
           echo "image-tag=${TAG}"       >> $GITHUB_OUTPUT
-
+```
