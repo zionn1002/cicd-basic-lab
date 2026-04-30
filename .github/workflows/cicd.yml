@@ -50,6 +50,7 @@ jobs:
 
       # 3. Maven 빌드
       - name: Build with Maven
+        working-directory: cicd-basic-lab
         run: mvn clean package -DskipTests -B
 
       # 4. OIDC 인증
@@ -92,4 +93,4 @@ jobs:
           # Job 2 (cd) 로 이미지 URI 전달
           echo "image-uri=${IMAGE_URI}" >> $GITHUB_OUTPUT
           echo "image-tag=${TAG}"       >> $GITHUB_OUTPUT
-```
+
