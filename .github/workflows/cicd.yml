@@ -2,8 +2,8 @@
 
 name: CI/CD - cicd-basic-lab to mylab-bastion (OIDC + SSM)
 on:
-  push:
-    branches: [main]
+  # push:
+  #   branches: [main]
   workflow_dispatch:
 
 # 빈칸 1: OIDC 토큰 발급을 위한 권한
