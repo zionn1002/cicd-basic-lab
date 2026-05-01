@@ -104,7 +104,7 @@ jobs:
       # find로 동적 탐색 (경로 중복 문제 회피)
       - name: Inject Account ID into task definition
         run: |
-          ACCOUNT_ID=$(aws sts get-caller-identity --query ACCOUNT --output text)
+          ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
           TASK_DEF_PATH=$(find $GITHUB_WORKSPACE -name "task-definition.json" | head -1)
           sed -i "s/ACCOUNT_ID/${ACCOUNT_ID}/g" ${TASK_DEF_PATH}
 
