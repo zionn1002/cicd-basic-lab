@@ -12,6 +12,7 @@ RUN mvn clean package -DskipTests -B
 
 # 2단계: 실행 이미지 (경량)
 FROM eclipse-temurin:17-jre-alpine
+RUN apk add --no-cache curl
 WORKDIR /app
 
 # non-root 사용자 생성
