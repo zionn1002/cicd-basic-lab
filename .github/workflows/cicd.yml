@@ -1,11 +1,3 @@
-# .github/workflows/cicd.yml
-# 
-# 단계별 발전 이력:
-#   SSH + Private Key (JAR 직접 배포)
-#   Docker Hub + docker run (컨테이너화)
-#   OIDC + SSM Send-Command (키 없는 인증)
-#   OIDC + ECR + ECS (현재, 서버리스 컨테이너)
-
 name: CI/CD — ECR + ECS
 
 on:
@@ -125,4 +117,4 @@ jobs:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service:  ${{ env.ECS_SERVICE }}
           cluster:  ${{ env.ECS_CLUSTER }}
-          wait-for-service-stability: true    # NEW TASK가 healty + OLD TASK가 종료 여부 확인
+          wait-for-service-stability: true # NEW TASK가 healthy + OLD TASK가 종료 여부 확인
